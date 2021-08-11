@@ -25,7 +25,7 @@ public class Juego {
             else if (c.compare(e1, e2) < 1)
                 return e2;
         }
-        return null; //Si devuelve null, no son enfrentables.
+        return null; //Si devuelve null, no son enfrentables. (Hay que verificar que ocurre con los null)
     }
 
     public boolean addEnfrentar(Enfrentable e){
