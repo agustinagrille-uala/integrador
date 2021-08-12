@@ -2,14 +2,16 @@ package model.atributo;
 
 import model.enfrentable.Enfrentable;
 
-public class AtributoSimple extends AtributoAbstract {
+public class AtributoSimple implements Atributo {
+
+    private float value;
 
     public AtributoSimple(float value) {
-        super(value);
+        this.value = value;
     }
 
     @Override
     public float getValor(Enfrentable e) {
-        return getValue();
+        return this.value;
     }
 }

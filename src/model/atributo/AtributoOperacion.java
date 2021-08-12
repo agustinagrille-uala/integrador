@@ -2,27 +2,19 @@ package model.atributo;
 
 import model.enfrentable.Enfrentable;
 
-import java.util.Arrays;
-import java.util.DoubleSummaryStatistics;
-import java.util.IntSummaryStatistics;
-import java.util.stream.Stream;
-
-public class AtributoOperacion extends AtributoAbstract {
+public class AtributoOperacion implements Atributo {
 
     private String key1;
     private String key2;
 
-    public AtributoOperacion(float value, String key1, String key2) {
-        super(value);
+    public AtributoOperacion(String key1, String key2) {
         this.key1 = key1;
         this.key2 = key2;
     }
 
     @Override
     public float getValor(Enfrentable e) {
-        System.out.println(e);
-
-        return getValue();
+        return e.getValorAtributo(this.key1)+e.getValorAtributo(key2);
     }
 
     public String getKey1() {

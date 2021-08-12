@@ -30,21 +30,19 @@ public class Main {
         AtributoSimple atributo2 = new AtributoSimple(35.5f);
         AtributoSimple atributo4 = new AtributoSimple(60f);
         AtributoSimple atributo5 = new AtributoSimple(100f);
-        AtributoOperacion atributo3 = new AtributoOperacion(34.4f, "velocidad", "fuerza");
+        AtributoOperacion atributo3 = new AtributoOperacion("Velocidad", "Fuerza");
+        AtributoCondicional atributoCondicional = new AtributoCondicional( "Fuerza", "Velocidad", atributo1, atributo5);
 
-        ps3.addAtributo("Velocidad",atributo3);
+        ps3.addAtributo("podermaximo", atributoCondicional);
+        ps3.addAtributo("Velocidad",atributo4);
         ps3.addAtributo("Fuerza", atributo2);
 
-        personaje.addAtributo("Velocidad", atributo3);
-        personaje.addAtributo("Fuerza", atributo4);
-
+        System.out.println(atributoCondicional.getValor(ps3));
 
         Liga liga1 = new Liga("SuperCampeones", "SuperCampeones", PersonajesDB.personajes());
         Liga liga2 = new Liga("SuperUalaseros", "SuperUalaseros");
         liga2.addIntegrante(liga1);
         System.out.println(atributo3.getValor(ps3));
-        liga1.addIntegrante(ps3);
-
 
         ComparatorNombre cNombre = new ComparatorNombre();
         ComparatorCompuesto cCompuesto = new ComparatorCompuesto();

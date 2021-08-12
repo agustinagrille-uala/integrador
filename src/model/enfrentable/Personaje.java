@@ -37,6 +37,14 @@ public class Personaje extends Enfrentable {
         return personajes;
     }
 
+    public Map<String, Atributo> getAtributos() {
+        return atributos;
+    }
+
+    public void setAtributos(Map<String, Atributo> atributos) {
+        this.atributos = atributos;
+    }
+
     @Override
     public String toString() {
         return "Identidad Supersecreta: "+nombre+"Identidad de Heroe/Villano: "+nombreFantasia;
