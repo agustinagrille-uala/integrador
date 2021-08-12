@@ -1,7 +1,10 @@
 package model.enfrentable;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.DoubleSummaryStatistics;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Liga extends Enfrentable {
@@ -27,22 +30,19 @@ public class Liga extends Enfrentable {
 
     @Override
     public float getValorAtributo(String key) {
-        Stream<Float> result = this.integrantes.stream()
-                .filter(e -> e instanceof Personaje)
-                .map(enfrentable -> enfrentable.getValorAtributo(key));
+        DoubleSummaryStatistics valorPromedio = this.integrantes.stream()
+                .mapToDouble(enfrentable -> enfrentable.getValorAtributo(key))
+                .summaryStatistics();
 
-        return 0.0f;
+        return (float)valorPromedio.getAverage();
     }
 
     @Override
     public List<Personaje> getPersonajes() {
         List<Personaje> tempPersonajes = new ArrayList<>();
+        this.integrantes.forEach(e ->
+            tempPersonajes.add((Personaje) e));
 
-        this.integrantes.forEach(e -> {
-            if(e instanceof Personaje) {
-                tempPersonajes.add((Personaje) e);
-            }
-        });
         return tempPersonajes;
     }
 }

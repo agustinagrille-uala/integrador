@@ -13,12 +13,19 @@ public abstract class Enfrentable {
         this.nombreFantasia = nombreFantasia;
     }
 
-    public Enfrentable enfrentar(Enfrentable e, Comparator c) {
-        return e;
+    public Enfrentable enfrentar(Enfrentable e, Comparator<Enfrentable> c) {
+        if(c.compare(this, e) > 1) {
+            return this;
+        } else {
+            return e;
+        }
     }
 
     public List<Personaje> ordenar(Comparator c) {
-        return null;
+        List<Personaje> listOrdenada = this.getPersonajes();
+        listOrdenada.sort(c);
+
+        return listOrdenada;
     }
 
     public abstract float getValorAtributo(String key);
