@@ -22,6 +22,7 @@ public class Liga extends Enfrentable {
 
     @Override
     public float getValorAtributo(String key) {
+        int tamañoIntegrantes = this.integrantes.size();
         DoubleSummaryStatistics valorPromedio = this.integrantes.stream()
                 .mapToDouble(enfrentable -> enfrentable.getValorAtributo(key))
                 .summaryStatistics();

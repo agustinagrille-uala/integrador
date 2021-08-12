@@ -15,10 +15,10 @@ public abstract class Enfrentable {
 
     public Enfrentable enfrentar(Enfrentable e, Comparator<Enfrentable> c) {
         if(c.compare(this, e) == 1) {
-            System.out.println("En la batalla final ultraviolenta por nombres ganó: "+this.getNombreFantasia());
+            System.out.println("En la batalla final ultraviolenta ganó: "+this.getNombreFantasia());
             return this;
         } else {
-            System.out.println("En la batalla final ultraviolenta por nombres ganó: "+e.getNombreFantasia());
+            System.out.println("En la batalla final ultraviolenta ganó: "+e.getNombreFantasia());
             return e;
         }
     }
