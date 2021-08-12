@@ -27,7 +27,7 @@ public class Personaje extends Enfrentable {
 
     @Override
     public float getValorAtributo(String key) {
-            return this.atributos.get(key).getValor(this);
+        return this.atributos.get(key).getValor(this);
     }
 
     @Override

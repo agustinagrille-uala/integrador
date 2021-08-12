@@ -11,7 +11,9 @@ import model.enfrentable.Enfrentable;
 import model.enfrentable.Liga;
 import model.enfrentable.Personaje;
 import model.juego.Juego;
+import model.personajesDataBase.PersonajesDB;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -30,20 +32,26 @@ public class Main {
         AtributoSimple atributo5 = new AtributoSimple(100f);
         AtributoOperacion atributo3 = new AtributoOperacion(34.4f, "velocidad", "fuerza");
 
-        ps3.addAtributo("Velocidad",atributo1);
+        ps3.addAtributo("Velocidad",atributo3);
         ps3.addAtributo("Fuerza", atributo2);
 
-        personaje.addAtributo("Velocidad", atributo5);
+        personaje.addAtributo("Velocidad", atributo3);
         personaje.addAtributo("Fuerza", atributo4);
 
-        Liga liga1 = new Liga("SuperCampeones",);
+
+        Liga liga1 = new Liga("SuperCampeones", "SuperCampeones", PersonajesDB.personajes());
+        Liga liga2 = new Liga("SuperUalaseros", "SuperUalaseros");
+        liga2.addIntegrante(liga1);
+        System.out.println(atributo3.getValor(ps3));
+        liga1.addIntegrante(ps3);
+
+
         ComparatorNombre cNombre = new ComparatorNombre();
         ComparatorCompuesto cCompuesto = new ComparatorCompuesto();
         ComparatorCriterioSimple cCriterioSimple = new ComparatorCriterioSimple("Velocidad");
         cCompuesto.addComparator(cCriterioSimple);
         //juego.addEnfrentable(personaje,ps3,personaje2);
-        System.out.println(juego.ordenarPersonajes(cNombre));
-        personaje.enfrentar(ps3, cCompuesto);
+        //personaje.enfrentar(ps3, cCompuesto);
 
     }
 }

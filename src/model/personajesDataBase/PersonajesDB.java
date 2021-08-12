@@ -6,6 +6,7 @@ import model.enfrentable.Personaje;
 import java.util.List;
 
 public class PersonajesDB {
+
     public static List<Enfrentable> personajes(){
         return List.of(new Personaje("Agus","AgusGrosa"),
                 new Personaje("Ali", "BombardeadorMaster"),

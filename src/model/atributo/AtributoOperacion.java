@@ -2,6 +2,11 @@ package model.atributo;
 
 import model.enfrentable.Enfrentable;
 
+import java.util.Arrays;
+import java.util.DoubleSummaryStatistics;
+import java.util.IntSummaryStatistics;
+import java.util.stream.Stream;
+
 public class AtributoOperacion extends AtributoAbstract {
 
     private String key1;
@@ -13,10 +18,11 @@ public class AtributoOperacion extends AtributoAbstract {
         this.key2 = key2;
     }
 
-
     @Override
     public float getValor(Enfrentable e) {
-        return 0;
+        System.out.println(e);
+
+        return getValue();
     }
 
     public String getKey1() {

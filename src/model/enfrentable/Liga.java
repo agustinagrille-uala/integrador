@@ -1,31 +1,23 @@
 package model.enfrentable;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.DoubleSummaryStatistics;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.*;
 
 public class Liga extends Enfrentable {
 
-    private List<Enfrentable> integrantes;
+    private List<Enfrentable> integrantes = new ArrayList<>();
 
     public Liga(String nombre, String nombreFantasia, List<Enfrentable> integrantes) {
         super(nombre, nombreFantasia);
-        this.integrantes = integrantes;
+        this.integrantes.addAll(integrantes);
     }
 
     public Liga(String nombre, String nombreFantasia) {
         super(nombre, nombreFantasia);
     }
 
-    public boolean addIntegrante(Enfrentable e) {
-        if(!this.integrantes.contains(e)) {
-            this.integrantes.add(e);
-            return true;
-        }
-        return false;
+    public boolean addIntegrante(Enfrentable... e) {
+        this.integrantes.addAll(Arrays.asList(e));
+        return true;
     }
 
     @Override
@@ -41,7 +33,7 @@ public class Liga extends Enfrentable {
     public List<Personaje> getPersonajes() {
         List<Personaje> tempPersonajes = new ArrayList<>();
         this.integrantes.forEach(e ->
-            tempPersonajes.add((Personaje) e));
+                tempPersonajes.addAll(e.getPersonajes()));
 
         return tempPersonajes;
     }

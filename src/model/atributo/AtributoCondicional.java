@@ -19,6 +19,7 @@ public class AtributoCondicional extends AtributoAbstract {
 
     @Override
     public float getValor(Enfrentable e) {
+
         return 0;
     }
 
