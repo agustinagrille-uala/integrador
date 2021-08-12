@@ -21,12 +21,15 @@ public class Juego {
 
     public Enfrentable enfrentar(Enfrentable e1, Enfrentable e2, Comparator c){
         if(e1 != e2) {
-            if (c.compare(e1, e2) > 1)
+            if (c.compare(e1, e2) > 1) {
+                System.out.println("En la batalla final ultraviolenta ganó " + e1.getNombreFantasia());
                 return e1;
-            else if (c.compare(e1, e2) < 1)
+            }else {
+                System.out.println("En la batalla final ultraviolenta ganó " + e2.getNombreFantasia());
                 return e2;
+            }
         }
-        return null; //Si devuelve null, no son enfrentables. (Hay que verificar que ocurre con los null)
+        return null;
     }
 
     public boolean addEnfrentable(Enfrentable... e){

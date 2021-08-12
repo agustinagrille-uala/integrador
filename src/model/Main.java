@@ -24,7 +24,7 @@ public class Main {
 
         //Creamos 4 personajes iniciales...
 
-        Personaje ps = new Personaje("Pepe", "SuperPepin");
+        Personaje ps = new Personaje("Pepe Argento", "SuperPepin");
         System.out.println("Nuevo personaje creado "+ps.getNombreFantasia());
         Personaje ps2 = new Personaje("Elmo", "ElmoSabeDondeVivesMan");
         System.out.println("Nuevo personaje creado "+ps2.getNombreFantasia());
@@ -72,10 +72,13 @@ public class Main {
         ComparatorCriterioSimple cCriterioSimple = new ComparatorCriterioSimple("Velocidad");
         cCompuesto.addComparator(cCriterioSimple);
 
+        System.out.println("¡Se enfrentan dos personajes! "+ps+" y "+ps4);
+        juego.enfrentar(ps,ps4,cNombre);
         System.out.println("¡HORA DE LA BATALLA FINAL ULTRAVIOLENTA!");
         System.out.println("¡Se enfrentan! "+ps2+" y la liga "+liga2.getNombreFantasia());
         System.out.println("El promedio de poder de "+ps2.getNombreFantasia()+" es de "+ps2.getValorAtributo("Velocidad"));
         ps2.enfrentar(liga2, cCriterioSimple);
+
 
 
     }
