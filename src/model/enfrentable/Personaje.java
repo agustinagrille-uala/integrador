@@ -2,6 +2,8 @@ package model.enfrentable;
 
 import model.atributo.Atributo;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,11 +13,12 @@ public class Personaje extends Enfrentable {
 
     public Personaje(String nombre, String nombreFantasia) {
         super(nombre, nombreFantasia);
+        this.atributos = new HashMap<>();
     }
 
-    public boolean addAtributo(String k, Atributo a) {
-         if(this.atributos.get(k) == null) {
-            this.atributos.put(k, a);
+    public boolean addAtributo(String key, Atributo atributo) {
+         if(this.atributos.get(key) == null) {
+            this.atributos.put(key, atributo);
             return true;
          } else {
             return false;
@@ -24,7 +27,7 @@ public class Personaje extends Enfrentable {
 
     @Override
     public float getValorAtributo(String key) {
-        if(this.atributos.get(key).getValor(this) == 0.0f) {
+        if(this.atributos.get(key) == null) {
             return 0.0f;
         }else {
             return this.atributos.get(key).getValor(this);
@@ -32,7 +35,9 @@ public class Personaje extends Enfrentable {
     }
 
     @Override
-    protected List<Personaje> getPersonajes() {
-        return this.getPersonajes();
+    public List<Personaje> getPersonajes() {
+        List<Personaje> personajes = new ArrayList<>();
+        personajes.add(this);
+        return personajes;
     }
 }

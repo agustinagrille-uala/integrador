@@ -2,15 +2,15 @@ package model.atributo;
 
 import model.enfrentable.Enfrentable;
 
-public class AtributoCondicional implements Atributo {
+public class AtributoCondicional extends AtributoAbstract {
 
-    private float value;
     private String key1;
     private String key2;
     private Atributo keyThen;
     private Atributo keyElse;
 
-    public AtributoCondicional(String key1, String key2, Atributo keyThen, Atributo keyElse) {
+    public AtributoCondicional(float value, String key1, String key2, Atributo keyThen, Atributo keyElse) {
+        super(value);
         this.key1 = key1;
         this.key2 = key2;
         this.keyThen = keyThen;
@@ -20,14 +20,6 @@ public class AtributoCondicional implements Atributo {
     @Override
     public float getValor(Enfrentable e) {
         return 0;
-    }
-
-    public float getValue() {
-        return value;
-    }
-
-    public void setValue(float value) {
-        this.value = value;
     }
 
     public String getKey1() {

@@ -2,28 +2,21 @@ package model.atributo;
 
 import model.enfrentable.Enfrentable;
 
-public class AtributoOperacion implements Atributo {
+public class AtributoOperacion extends AtributoAbstract {
 
-    private float value;
-    protected String key1;
-    protected String key2;
+    private String key1;
+    private String key2;
 
-    public AtributoOperacion(String key1, String key2) {
+    public AtributoOperacion(float value, String key1, String key2) {
+        super(value);
         this.key1 = key1;
         this.key2 = key2;
     }
 
+
     @Override
     public float getValor(Enfrentable e) {
         return 0;
-    }
-
-    public float getValue() {
-        return value;
-    }
-
-    public void setValue(float value) {
-        this.value = value;
     }
 
     public String getKey1() {

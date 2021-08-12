@@ -2,6 +2,7 @@ package model.enfrentable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 public class Liga extends Enfrentable {
 
@@ -17,17 +18,24 @@ public class Liga extends Enfrentable {
     }
 
     public boolean addIntegrante(Enfrentable e) {
-        this.integrantes.add(e);
-        return true;
+        if(!this.integrantes.contains(e)) {
+            this.integrantes.add(e);
+            return true;
+        }
+        return false;
     }
 
     @Override
     public float getValorAtributo(String key) {
+        Stream<Float> result = this.integrantes.stream()
+                .filter(e -> e instanceof Personaje)
+                .map(enfrentable -> enfrentable.getValorAtributo(key));
+
         return 0.0f;
     }
 
     @Override
-    protected List<Personaje> getPersonajes() {
+    public List<Personaje> getPersonajes() {
         List<Personaje> tempPersonajes = new ArrayList<>();
 
         this.integrantes.forEach(e -> {

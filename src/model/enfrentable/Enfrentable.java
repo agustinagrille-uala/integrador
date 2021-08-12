@@ -23,7 +23,7 @@ public abstract class Enfrentable {
 
     public abstract float getValorAtributo(String key);
 
-    protected abstract List<Personaje> getPersonajes();
+    public abstract List<Personaje> getPersonajes();
 
     public String getNombre() {
         return nombre;
