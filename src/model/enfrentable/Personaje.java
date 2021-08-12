@@ -40,4 +40,12 @@ public class Personaje extends Enfrentable {
         personajes.add(this);
         return personajes;
     }
+
+    @Override
+    public String toString() {
+        return "Personaje{" +
+                "nombre='" + nombre + '\'' +
+                ", nombreFantasia='" + nombreFantasia + '\'' +
+                '}';
+    }
 }
