@@ -27,11 +27,7 @@ public class Personaje extends Enfrentable {
 
     @Override
     public float getValorAtributo(String key) {
-        if(this.atributos.get(key) == null) {
-            return 0.0f;
-        }else {
             return this.atributos.get(key).getValor(this);
-        }
     }
 
     @Override
@@ -43,9 +39,6 @@ public class Personaje extends Enfrentable {
 
     @Override
     public String toString() {
-        return "Personaje{" +
-                "nombre='" + nombre + '\'' +
-                ", nombreFantasia='" + nombreFantasia + '\'' +
-                '}';
+        return "Identidad Supersecreta: "+nombre+"Identidad de Heroe/Villano: "+nombreFantasia;
     }
 }

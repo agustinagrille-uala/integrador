@@ -9,7 +9,7 @@ public abstract class AtributoAbstract implements Atributo {
     }
 
     public float getValue() {
-        return value;
+        return this.value;
     }
 
     public void setValue(float value) {

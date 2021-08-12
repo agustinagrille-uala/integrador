@@ -3,6 +3,7 @@ package model.juego;
 import model.enfrentable.Enfrentable;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -28,15 +29,15 @@ public class Juego {
         return null; //Si devuelve null, no son enfrentables. (Hay que verificar que ocurre con los null)
     }
 
-    public boolean addEnfrentar(Enfrentable e){
-        this.enfrentables.add(e);
+    public boolean addEnfrentable(Enfrentable... e){
+        this.enfrentables.addAll(Arrays.asList(e));
         return true;
     }
 
     public List<Enfrentable> ordenarPersonajes(Comparator c){
         List<Enfrentable> listaOrdenada = (List<Enfrentable>) this.enfrentables.stream().sorted(c).collect(Collectors.toList());
         return listaOrdenada;
-        //REVISAR
+
     }
 
 }

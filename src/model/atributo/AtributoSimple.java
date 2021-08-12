@@ -10,6 +10,6 @@ public class AtributoSimple extends AtributoAbstract {
 
     @Override
     public float getValor(Enfrentable e) {
-        return 0;
+        return getValue();
     }
 }
