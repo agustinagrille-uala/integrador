@@ -13,7 +13,7 @@ public abstract class Enfrentable {
     public Enfrentable(String nombre, String nombreFantasia, String ejemplo) {
         this.nombre = nombre;
         this.nombreFantasia = nombreFantasia;
-        this.ejemplo = ejemplo;
+        this.ejemplo = ejemploadsaddasdasdasasd;
         }
 
     public Enfrentable enfrentar(Enfrentable e, Comparator<Enfrentable> c) {
