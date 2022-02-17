@@ -7,6 +7,8 @@ public abstract class Enfrentable {
 
     protected String nombre;
     protected String nombreFantasia;
+    private String ejemplo;
+
 
     public Enfrentable(String nombre, String nombreFantasia) {
         this.nombre = nombre;
